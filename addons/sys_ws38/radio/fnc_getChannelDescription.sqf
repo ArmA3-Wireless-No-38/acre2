@@ -23,6 +23,10 @@ params ["_radioId", "",  "", "", ""];
 
 private _hashData = [_radioId, "getCurrentChannelData"] call EFUNC(sys_data,dataEvent);
 
-private _description = format["Frequency: %1 MHz", HASH_GET(_hashData,"frequencyTX")];
+private _frequency = HASH_GET(_hashData,"frequencyTX");
+
+private _channel = ([_frequency] call FUNC(getChannelForFrequency)) select 0;
+private _displayFrequency = (_channel + INDEX_CONVERSION)/10;
+private _description = format["Channel: %1 Frequency: %2 MHz (%3)", _channel, _displayFrequency, _frequency];
 
 _description

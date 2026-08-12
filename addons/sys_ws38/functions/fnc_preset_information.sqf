@@ -16,7 +16,7 @@
  */
 
 // WirelessSet No. 38
-// Frequency Range 7.4-9.0 MHz
+// Frequency Range 7.4-9.0 MHz (30-46 MHz using 77 Frequencies for the range)
 
 // channel information
 ///Default
@@ -24,8 +24,11 @@ private _presetData = HASH_CREATE;
 private _channels = HASHLIST_CREATELIST(["frequencyTX"]);
 
 private _channel = HASHLIST_CREATEHASH(_channels);
-HASH_SET(_channel,"frequencyTX",7.40);
+HASH_SET(_channel,"frequencyTX",30.00);
+HASH_SET(_channel,"encryption",1);
+HASH_SET(_channel,"TEK",1);
 HASHLIST_PUSH(_channels,_channel);
+
 
 HASH_SET(_presetData,"channels",_channels);
 ["ACRE_WS38","default",_presetData] call EFUNC(sys_data,registerRadioPreset);
@@ -35,7 +38,9 @@ _presetData = HASH_CREATE;
 _channels = HASHLIST_CREATELIST(["frequencyTX"]);
 
 _channel = HASHLIST_CREATEHASH(_channels);
-HASH_SET(_channel,"frequencyTX",7.80);
+HASH_SET(_channel,"frequencyTX",31.00);
+HASH_SET(_channel,"encryption",1);
+HASH_SET(_channel,"TEK",1);
 HASHLIST_PUSH(_channels,_channel);
 
 HASH_SET(_presetData,"channels",_channels);
@@ -46,7 +51,9 @@ _presetData = HASH_CREATE;
 _channels = HASHLIST_CREATELIST(["frequencyTX"]);
 
 _channel = HASHLIST_CREATEHASH(_channels);
-HASH_SET(_channel,"frequencyTX",8.20);
+HASH_SET(_channel,"frequencyTX",32.00);
+HASH_SET(_channel,"encryption",1);
+HASH_SET(_channel,"TEK",1);
 HASHLIST_PUSH(_channels,_channel);
 
 HASH_SET(_presetData,"channels",_channels);
@@ -57,7 +64,9 @@ _presetData = HASH_CREATE;
 _channels = HASHLIST_CREATELIST(["frequencyTX"]);
 
 _channel = HASHLIST_CREATEHASH(_channels);
-HASH_SET(_channel,"frequencyTX",8.60);
+HASH_SET(_channel,"frequencyTX",33.00);
+HASH_SET(_channel,"encryption",1);
+HASH_SET(_channel,"TEK",1);
 HASHLIST_PUSH(_channels,_channel);
 
 HASH_SET(_presetData,"channels",_channels);

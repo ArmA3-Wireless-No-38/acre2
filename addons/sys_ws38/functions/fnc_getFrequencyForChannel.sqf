@@ -20,7 +20,7 @@
  params ["_channel"];
 TRACE_1("Enter Get Freq",_channel);
 _channel = (_channel max 0) min MAX_DIAL_INDICES;
-private _frequency = (_channel+INDEX_CONVERSION)/10;
+private _frequency = MIN_FREQUENCY+_channel;
 //Making it Arma-Float-Stable
 _frequency = [_frequency, 1, 2] call CBA_fnc_formatNumber;
 _frequency = parseNumber _frequency;
